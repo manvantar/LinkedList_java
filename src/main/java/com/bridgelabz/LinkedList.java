@@ -9,6 +9,12 @@ public class LinkedList {
         this.tail = null;
     }
 
+
+    /* This is method which adds the Nodes, if there is No nodes it will add it to first and make it
+    as head and tail, later when the next node is added it added to the tails next and later it will be made as tail
+    @param newINode of type INode
+    */
+
     public void add(INode newINode){
         if(this.tail==null){
             this.tail=newINode;
@@ -17,12 +23,16 @@ public class LinkedList {
             this.head=newINode;
         }
         else{
-            INode tempNode=this.head;
-            this.head=newINode;
-            this.head.setNext(tempNode);
+            this.tail.setNext(newINode);
+            this.tail=newINode;
         }
 
     }
+
+    /* This method is used to append the string with the nodes and
+    @return String this is appended string of total nodes
+     */
+
     public String printMyNodes() {
         String nodeslist="";
         INode tempNode = head;
