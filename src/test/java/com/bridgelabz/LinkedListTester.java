@@ -73,4 +73,16 @@ public class LinkedListTester {
         Assertions.assertEquals(false,result1);
     }
 
+    @Test
+    public void testaddAfter(){
+        LinkedList linkedList3=new LinkedList();
+        linkedList3.add(node2);
+        linkedList3.add(node1);
+        linkedList3.add(node3);
+        MyNode<Integer> node4=new MyNode<>(40);
+        linkedList3.addAfter(node2,node4);
+        String result3=linkedList3.printMyNodes();
+        Assertions.assertEquals("56->40->30->70",result3);
+    }
+
 }
