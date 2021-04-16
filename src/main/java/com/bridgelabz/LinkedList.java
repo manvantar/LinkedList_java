@@ -34,13 +34,13 @@ public class LinkedList {
 
     public String printMyNodes() {
         String nodeslist="";
-        INode tempNode = head;
-        while (tempNode.getNext() != null) {
-            nodeslist=nodeslist+tempNode.getKey();
-            if (!tempNode.equals(tail)) nodeslist=nodeslist+"->";
-            tempNode = tempNode.getNext();
+        INode tempINode = head;
+        while (tempINode.getNext() != null) {
+            nodeslist=nodeslist+tempINode.getKey();
+            if (!tempINode.equals(tail)) nodeslist=nodeslist+"->";
+            tempINode = tempINode.getNext();
         }
-        nodeslist=nodeslist+tempNode.getKey();
+        nodeslist=nodeslist+tempINode.getKey();
         System.out.println(nodeslist);
         return nodeslist;
     }
@@ -52,15 +52,15 @@ public class LinkedList {
     */
 
     public void addInbetween(INode prevINode,INode newINode, INode nextINode){
-        INode tempNode =this.head;
-        while (tempNode.getNext() != null) {
-            if(prevINode.getKey()==tempNode.getKey() && prevINode.getNext().getKey()==nextINode.getKey()){
-                INode tempNode2=prevINode.getNext();
+        INode tempINode =this.head;
+        while (tempINode.getNext() != null) {
+            if(prevINode.getKey()==tempINode.getKey() && prevINode.getNext().getKey()==nextINode.getKey()){
+                INode tempINode2=prevINode.getNext();
                 prevINode.setNext(newINode);
-                newINode.setNext(tempNode2);
+                newINode.setNext(tempINode2);
             }
             else{
-                tempNode = tempNode.getNext();
+                tempINode = tempINode.getNext();
             }
         }
     }
@@ -69,9 +69,23 @@ public class LinkedList {
     @return DeletedNode
      */
 
-    public INode pop(){
+    public INode popFirst(){
         INode tempINode=this.head;
         this.head=this.head.getNext();
+        return tempINode;
+    }
+
+    /* This method is used to delete the Node at end and
+    @return DeletedNode
+     */
+
+    public INode popLast(){
+        INode tempINode=this.head;
+        while (!tempINode.getNext().equals(this.tail)){
+            tempINode = tempINode.getNext();
+        }
+        this.tail = tempINode;
+        tempINode = tempINode.getNext();
         return tempINode;
     }
 

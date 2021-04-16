@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.LinkedListTester" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-04-16T12:13:56" hostname="mkv" time="0.076">
+<testsuite name="com.bridgelabz.LinkedListTester" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-04-16T13:13:09" hostname="mkv" time="0.032">
   <properties/>
-  <testcase name="testPop()" classname="com.bridgelabz.LinkedListTester" time="0.076">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;com.bridgelabz.MyNode@2f3b164f&gt; but was: &lt;com.bridgelabz.MyNode@1b3c3553&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;com.bridgelabz.MyNode@2f3b164f&gt; but was: &lt;com.bridgelabz.MyNode@1b3c3553&gt;
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at com.bridgelabz.LinkedListTester.testPop(LinkedListTester.java:52)
+  <testcase name="testPopLast()" classname="com.bridgelabz.LinkedListTester" time="0.032">
+    <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.bridgelabz.LinkedList.popLast(LinkedList.java:84)
+	at com.bridgelabz.LinkedListTester.testPopLast(LinkedListTester.java:59)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
