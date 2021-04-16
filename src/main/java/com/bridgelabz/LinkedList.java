@@ -65,4 +65,14 @@ public class LinkedList {
         }
     }
 
+    /* This method is used to delete the Node at first and
+    @return DeletedNode
+     */
+
+    public INode pop(){
+        INode tempINode=this.head;
+        this.head=this.head.getNext();
+        return tempINode;
+    }
+
 }
