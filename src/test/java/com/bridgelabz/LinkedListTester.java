@@ -59,4 +59,18 @@ public class LinkedListTester {
         INode result=linkedList2.popLast();
         Assertions.assertEquals(node3,result);
     }
+
+    @Test
+    public void testSearchNode(){
+        LinkedList linkedList2 = new LinkedList();
+        linkedList2.add(node1);
+        linkedList2.add(node2);
+        linkedList2.add(node3);
+        INode<Integer> node4=new MyNode<>(40);
+        boolean result=linkedList2.searchNode(node2);
+        boolean result1= linkedList2.searchNode(node4);
+        Assertions.assertEquals(true,result);
+        Assertions.assertEquals(false,result1);
+    }
+
 }

@@ -15,16 +15,15 @@ public class LinkedList {
     @param newINode of type INode
     */
 
-    public void add(INode newINode){
-        if(this.tail==null){
-            this.tail=newINode;
+    public void add(INode newINode) {
+        if (this.tail == null) {
+            this.tail = newINode;
         }
-        if(this.head==null){
-            this.head=newINode;
-        }
-        else{
+        if (this.head == null) {
+            this.head = newINode;
+        } else {
             this.tail.setNext(newINode);
-            this.tail=newINode;
+            this.tail = newINode;
         }
     }
 
@@ -33,14 +32,14 @@ public class LinkedList {
      */
 
     public String printMyNodes() {
-        String nodeslist="";
+        String nodeslist = "";
         INode tempINode = head;
         while (tempINode.getNext() != null) {
-            nodeslist=nodeslist+tempINode.getKey();
-            if (!tempINode.equals(tail)) nodeslist=nodeslist+"->";
+            nodeslist = nodeslist + tempINode.getKey();
+            if (!tempINode.equals(tail)) nodeslist = nodeslist + "->";
             tempINode = tempINode.getNext();
         }
-        nodeslist=nodeslist+tempINode.getKey();
+        nodeslist = nodeslist + tempINode.getKey();
         System.out.println(nodeslist);
         return nodeslist;
     }
@@ -51,15 +50,14 @@ public class LinkedList {
     @param newINode this node to be added between prevINode and nextINode
     */
 
-    public void addInbetween(INode prevINode,INode newINode, INode nextINode){
-        INode tempINode =this.head;
+    public void addInbetween(INode prevINode, INode newINode, INode nextINode) {
+        INode tempINode = this.head;
         while (tempINode.getNext() != null) {
-            if(prevINode.getKey()==tempINode.getKey() && prevINode.getNext().getKey()==nextINode.getKey()){
-                INode tempINode2=prevINode.getNext();
+            if (prevINode.getKey() == tempINode.getKey() && prevINode.getNext().getKey() == nextINode.getKey()) {
+                INode tempINode2 = prevINode.getNext();
                 prevINode.setNext(newINode);
                 newINode.setNext(tempINode2);
-            }
-            else{
+            } else {
                 tempINode = tempINode.getNext();
             }
         }
@@ -69,9 +67,9 @@ public class LinkedList {
     @return DeletedNode
      */
 
-    public INode popFirst(){
-        INode tempINode=this.head;
-        this.head=this.head.getNext();
+    public INode popFirst() {
+        INode tempINode = this.head;
+        this.head = this.head.getNext();
         return tempINode;
     }
 
@@ -79,14 +77,28 @@ public class LinkedList {
     @return DeletedNode
      */
 
-    public INode popLast(){
-        INode tempINode=this.head;
-        while (!tempINode.getNext().equals(this.tail)){
+    public INode popLast() {
+        INode tempINode = this.head;
+        while (!tempINode.getNext().equals(this.tail)) {
             tempINode = tempINode.getNext();
         }
         this.tail = tempINode;
         tempINode = tempINode.getNext();
         return tempINode;
+    }
+
+    /* This method is used to search the Node and
+    @return boolean value
+     */
+    public boolean searchNode(INode value) {
+        INode tempINode = this.head;
+        while (tempINode != null) {
+           if (value.getKey().equals(tempINode.getKey())) {
+                return true;
+            }
+           tempINode=tempINode.getNext();
+        }
+        return false;
     }
 
 }

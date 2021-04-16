@@ -1,2 +1,4 @@
+com/bridgelabz/SomeListTest.java
+ com.bridgelabz.SomeListTest
 com/bridgelabz/LinkedListTester.java
  com.bridgelabz.LinkedListTester
