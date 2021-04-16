@@ -6,4 +6,5 @@ gradlew.bat
 .idea  
 settings.gradle
 build
-
+hs_err_pid10557.log
+hs_err_pid10852.log

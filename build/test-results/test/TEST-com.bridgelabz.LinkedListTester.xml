@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.LinkedListTester" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-16T17:51:39" hostname="mkv" time="0.071">
+<testsuite name="com.bridgelabz.LinkedListTester" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-16T18:25:49" hostname="mkv" time="0.07">
   <properties/>
-  <testcase name="testaddAfter()" classname="com.bridgelabz.LinkedListTester" time="0.071"/>
-  <system-out><![CDATA[56->40->30->70
+  <testcase name="testDeleteInbetween()" classname="com.bridgelabz.LinkedListTester" time="0.07"/>
+  <system-out><![CDATA[30->70
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
