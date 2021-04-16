@@ -40,4 +40,14 @@ public class LinkedListTester {
         Assertions.assertEquals("56->56->30->70",result3);
     }
 
+    @Test
+    public void testPop(){
+        LinkedList linkedList2 = new LinkedList();
+        linkedList2.add(node1);
+        linkedList2.add(node2);
+        linkedList2.add(node3);
+        INode result=linkedList2.pop();
+        Assertions.assertEquals(node1,result);
+    }
+
 }
