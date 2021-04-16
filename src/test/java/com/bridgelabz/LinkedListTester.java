@@ -41,13 +41,22 @@ public class LinkedListTester {
     }
 
     @Test
-    public void testPop(){
+    public void testPopFirst(){
         LinkedList linkedList2 = new LinkedList();
         linkedList2.add(node1);
         linkedList2.add(node2);
         linkedList2.add(node3);
-        INode result=linkedList2.pop();
+        INode result=linkedList2.popFirst();
         Assertions.assertEquals(node1,result);
     }
 
+    @Test
+    public void testPopLast(){
+        LinkedList linkedList2 = new LinkedList();
+        linkedList2.add(node1);
+        linkedList2.add(node2);
+        linkedList2.add(node3);
+        INode result=linkedList2.popLast();
+        Assertions.assertEquals(node3,result);
+    }
 }
