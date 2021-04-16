@@ -26,7 +26,6 @@ public class LinkedList {
             this.tail.setNext(newINode);
             this.tail=newINode;
         }
-
     }
 
     /* This method is used to append the string with the nodes and
@@ -44,6 +43,26 @@ public class LinkedList {
         nodeslist=nodeslist+tempNode.getKey();
         System.out.println(nodeslist);
         return nodeslist;
+    }
+
+    /* This is method which adds the Nodes in between,
+    @param prevINode this is used to indicate previousNode
+    @param nextINode this is used to indicate nextNode
+    @param newINode this node to be added between prevINode and nextINode
+    */
+
+    public void addInbetween(INode prevINode,INode newINode, INode nextINode){
+        INode tempNode =this.head;
+        while (tempNode.getNext() != null) {
+            if(prevINode.getKey()==tempNode.getKey() && prevINode.getNext().getKey()==nextINode.getKey()){
+                INode tempNode2=prevINode.getNext();
+                prevINode.setNext(newINode);
+                newINode.setNext(tempNode2);
+            }
+            else{
+                tempNode = tempNode.getNext();
+            }
+        }
     }
 
 }
