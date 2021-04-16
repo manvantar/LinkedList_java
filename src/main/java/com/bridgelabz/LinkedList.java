@@ -93,12 +93,30 @@ public class LinkedList {
     public boolean searchNode(INode value) {
         INode tempINode = this.head;
         while (tempINode != null) {
-           if (value.getKey().equals(tempINode.getKey())) {
+            if (value.getKey().equals(tempINode.getKey())) {
                 return true;
             }
-           tempINode=tempINode.getNext();
+            tempINode=tempINode.getNext();
         }
         return false;
+    }
+
+    /* This method is used to search the Node and add the new node next to it
+   @return boolean value
+    */
+    public void addAfter(INode prevINode, INode newINode) {
+        INode tempINode = this.head;
+        int found=0;
+        while (tempINode.getNext() != null && found==0) {
+            if (prevINode.getKey() == tempINode.getKey()) {
+                INode tempINode2 = prevINode.getNext();
+                prevINode.setNext(newINode);
+                newINode.setNext(tempINode2);
+                found=1;
+            } else {
+                tempINode = tempINode.getNext();
+            }
+        }
     }
 
 }
