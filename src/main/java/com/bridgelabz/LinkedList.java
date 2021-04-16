@@ -119,4 +119,37 @@ public class LinkedList {
         }
     }
 
+    /* This method is used to delete the Node inbetween
+    @return boolean DeletedNode
+     */
+
+    public boolean deleteNodeBetween(INode deleteNode) {
+        int found=0;
+        INode tempINode = this.head;
+        while (tempINode.getNext() != null && found==0) {
+            if (deleteNode.getKey() == tempINode.getNext().getKey()) {
+                tempINode.setNext(tempINode.getNext().getNext());
+                found=1;
+                return true;
+            } else {
+                tempINode = tempINode.getNext();
+            }
+        }
+        return false;
+    }
+
+    /* This method is used to calculate size LinkedList
+    @return size of the linkedList
+     */
+
+    public int sizeOfLinkedList() {
+        int size=0;
+        INode tempINode = head;
+        while (tempINode!= null) {
+            size++;
+            tempINode = tempINode.getNext();
+        }
+        return size;
+    }
+
 }

@@ -85,4 +85,17 @@ public class LinkedListTester {
         Assertions.assertEquals("56->40->30->70",result3);
     }
 
+    @Test
+    public void testDeleteInbetween_and_test_size(){
+        LinkedList linkedList2 = new LinkedList();
+        linkedList2.add(node1);
+        linkedList2.add(node2);
+        linkedList2.add(node3);
+        boolean result=linkedList2.deleteNodeBetween(node2);
+        Assertions.assertEquals(true,result);
+        linkedList2.printMyNodes();
+        int size=linkedList2.sizeOfLinkedList();
+        Assertions.assertEquals(2,size);
+    }
+
 }
